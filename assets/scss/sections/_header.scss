@@ -1,0 +1,87 @@
+.header{
+    position: relative;
+
+
+    &_row{
+        @include flex(center,space-between);
+        padding-top: 18px;
+
+    }
+
+
+    &_button{
+        border:none;
+        background-color: transparent;
+        fill: rgba(0, 0, 0, 1);
+
+
+        & svg path{
+            transition: all 0.2s ease-in-out;
+        }
+
+
+
+        &:hover path{
+            fill: rgb(236, 186, 68);
+        }
+    }
+
+    &_link{
+        font-family: Arial, sans-serif;
+        text-transform: uppercase;
+        padding: 45px 20px 40px;
+        line-height: 20px;
+        color: #2B2B2B;
+        font-weight: 300;
+        font-size: 20px;
+        opacity: 0.7;
+        transition: all 0.2s ease-in-out;
+
+
+        &:hover,&:active{
+            color: #e89f38 ;
+            border-bottom: 2px solid rgb(238, 174, 25);
+        }
+    
+    }
+
+    &_navbar{
+        display: flex;
+
+        @include media(1120){
+            display: none
+        }
+    }
+
+    &_bar{
+        @include flex(center,center);
+        gap: 45px;
+
+    }
+
+
+
+
+    &_dropdown{
+        position: absolute;
+        width: 100%;
+        height: 400px;
+        top: 115%;
+        left: 0;
+        background-color: red;
+        opacity: 0;
+        transform: translateY(-20px);
+        visibility: hidden;
+        transition: all 0.2s ease-in-out;
+
+
+        &.open{
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+
+        }
+    }
+
+
+}
