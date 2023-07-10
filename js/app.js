@@ -1,7 +1,7 @@
 const links = document.querySelectorAll('.header_link')
 const dropdowns = document.querySelectorAll('.header_dropdown')
-const headerMenu = document.querySelector('.header_menu')
-const headerMenuButton = document.querySelectorAll('.header_menu_open')
+// const headerMenu = document.querySelector('.header_menu')
+// const headerMenuButton = document.querySelectorAll('.header_menu_open')
 
 
 function closeDropdown() {
@@ -25,11 +25,11 @@ for (let link of links){
 }
 
 
-headerMenuButton.addEventListener('click', function(){
-    if(headerMenu.classList.contains('open')){
-        headerMenu.classList.remove('open')
-    }    
-    else{
-        headerMenu.classList.add('open')
-    }
-})
+// headerMenuButton.addEventListener('click', function(){
+//     if(headerMenu.classList.contains('open')){
+//         headerMenu.classList.remove('open')
+//     }
+//     else{
+//         headerMenu.classList.add('open')
+//     }
+// })

@@ -45,6 +45,9 @@ html, body {
   padding: 0 20px;
 }
 
+.header {
+  position: relative;
+}
 .header_row {
   display: flex;
   align-items: center;

@@ -1,5 +1,5 @@
 .header{
-
+position: relative;
 
     &_row{
         @include flex(center,space-between);
@@ -93,6 +93,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.2s ease-in-out;
+
 
         &.open{
             right: 0;
