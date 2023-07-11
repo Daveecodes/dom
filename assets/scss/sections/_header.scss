@@ -1,11 +1,120 @@
 .header{
-position: relative;
+    padding: 10px 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 10;
+
 
     &_row{
         @include flex(center,space-between);
-        padding-top: 20px;
-        padding-bottom: 20px;
 
+    }
+
+
+    &_line{
+        @include flex(center,center);
+        padding: 10px 0;
+        background-color: #252b2e;
+
+
+        &_text{
+            color: white;
+        }
+
+    }
+
+
+
+
+
+    &_menu{
+        position: absolute;
+        width:430px;
+        height: calc(100vh - 93px );
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        background-color: rgb(255, 255, 255);
+        transition: all 0.2s ease-in-out;
+
+
+        &_request{
+            padding-top: 15px;
+            padding-left: 25px;
+
+
+
+
+            &_button{
+                width: 100%;
+                height: 40px;
+                background-color: transparent;
+                border: 1px solid #2B2B2B;
+                transition: all 0.2s ease-in-out;
+                border-radius:5px ;
+                margin-top: 30px;
+                color: #2B2B2B;
+
+
+                &_text{
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: 500;
+                }
+
+
+                &:hover{
+                    color: #fff;
+                    background-color: #2B2B2B;
+                }
+            }
+        }
+
+        &_contact{
+            @include flex(start,unset);
+            flex-direction: column;
+            gap: 30px;
+            padding: 15px 0 15px 0;
+            border-bottom: 1px dashed #2B2B2B;
+            padding-left: 25px;
+
+    
+            &_panel{
+                @include flex(start,unset);
+                flex-direction: column;
+                gap: 5px;
+
+               
+    
+            }
+            
+            &_sub{
+                font-family: Arial, Helvetica, sans-serif;
+                display: block;
+                font-size: 14px;
+                line-height: 18px;
+            }
+    
+            &_tel{
+                font-size: 24px;
+                color: #2B2B2B;
+                text-decoration: none;
+                outline: none;
+                font-weight: 200;
+            }
+        }
+
+
+        &_row{
+            padding-top: 30px;
+            padding-right: 30px;
+        }
+
+
+        &.open{
+            right: 0;
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
 
@@ -29,7 +138,7 @@ position: relative;
     &_link{
         font-family: Arial, sans-serif;
         text-transform: uppercase;
-        padding: 40px 20px 40px;
+        padding: 40px 20px 37px;
         line-height: 20px;
         color: #2B2B2B;
         font-weight: 300;
@@ -38,7 +147,12 @@ position: relative;
         transition: all 0.2s ease-in-out;
 
 
-        &:hover,&:active{
+        &:hover{
+            color: #e89f38 ;
+            border-bottom: 2px solid rgb(238, 174, 25);
+        }
+
+        &:active{
             color: #e89f38 ;
             border-bottom: 2px solid rgb(238, 174, 25);
         }
@@ -65,14 +179,130 @@ position: relative;
     &_dropdown{
         position: absolute;
         width: 100%;
-        height: 400px;
-        top:106px ;
+        height: fit-content;
+        top: 93px;
         left: 0;
-        background-color: red;
+        background-color: white;
         opacity: 0;
         transform: translateY(-20px);
         visibility: hidden;
         transition: all 0.2s ease-in-out;
+
+
+        &_row{
+            position: relative;
+            width: 100%;
+            padding: 40px 0;
+            background-color: #fff
+        }
+
+
+
+        &_text{
+            @include flex(start,unset);
+            flex-direction: column;
+            gap: 15px;
+            width: 35%;
+            
+
+
+            &_title{
+                font-weight: bold;
+                font-size: 30px;
+                line-height: 30px;
+                margin-bottom: 10px;
+                color: #2B2B2B;
+            }
+
+
+            &_subtitle{
+                font-family: Arial, Helvetica, sans-serif;
+                width: 60%;
+                line-height: 25px;
+                opacity: 0.7;
+            }
+
+            &_link{
+                gap: 4px;
+                margin-top: 30px;
+                display: flex;
+                line-height: 18px;
+                font-size: 20px;
+                padding-bottom: 3px;
+                border-bottom: 2px solid #e89f38;
+            }
+        }
+
+
+        &_info{
+            @include flex(start,unset);
+
+            &_selector{
+                @include flex(start,unset);
+                flex-direction: column;
+                gap: 12px;
+
+                &_border{
+                    padding-bottom: 20px;
+                    border-bottom: 1px dashed #2B2B2B;
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 25px;
+                        height: 100%;
+                        background-color: rgb(255, 255, 255);
+                        
+                    }
+                }
+
+                &_panel{
+                    @include flex(center,center);
+                    gap: 7px;
+                    transition: all 0.2s ease-in-out;
+
+
+                 
+                    &_panel{
+
+                        &:hover{
+                            transform: translateX(60px);
+    
+                        }
+                    }
+
+                    &:hover{
+                        transform: translateX(7px);
+                    }
+
+                    &_icon{
+
+                        &:hover path{
+                            fill: black;
+                        }
+                    }
+
+
+                    &_text{
+                        font-size: 20px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        color: #2B2B2B;
+                        text-decoration: none;
+                        font-weight: 700;
+                        opacity: 0.7;
+
+                        &_text{
+                            font-weight: 100;
+                        }
+
+
+                        &:hover{
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
 
 
         &.open{
@@ -82,25 +312,5 @@ position: relative;
 
         }
     }
-
-    &_menu{
-        position: absolute;
-        width: 350px;
-        height: calc(100vh - 106px);
-        background-color: red;
-        bottom: 0;
-        right: -100%;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.2s ease-in-out;
-
-
-        &.open{
-            right: 0;
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-
 
 }
