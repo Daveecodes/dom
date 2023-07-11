@@ -31,18 +31,31 @@
 
     &_text{
         position: absolute;
-        left: 15%;
-        top: 100px;
+        left: 12%;
+        top: 150px;
+
+        @include media(1100){
+            left: 8%;
+            top: 60px;
+        }
+
+        @include media(450){
+            top: 40px;
+        }
     }
 
 
 
     &_title{
        text-transform: none;
-       font-size: 40px;
        line-height: 46px;
        margin-top: 5px;
        font-weight: 200;
+       @include adaptive-value('font-size',40,16);
+
+       @include media(600){
+        line-height: 26px;
+       }
     }
 
 }
